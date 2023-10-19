@@ -1,5 +1,7 @@
 package com.project.game.controller;
 
+import java.util.Scanner;
+
 public class Omok {
     public static void main(String[] args) {
         Player user = new Player("사용자", "O");
@@ -9,6 +11,15 @@ public class Omok {
     }
     private static void play(Board board, Player user, Player computer) {
         board.print();
+        Scanner sc = new Scanner(System.in); 
+        System.out.println(user.name+">");
+        String UStone = sc.nextLine();
+        System.out.println(computer.name+">");
+        String CStone = sc.nextLine();
+        
+        System.out.println("UStone"+UStone);
+        System.out.println("CStone"+CStone);
+        
     }
 
 }
