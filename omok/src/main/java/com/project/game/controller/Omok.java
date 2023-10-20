@@ -11,14 +11,17 @@ public class Omok {
     }
     private static void play(Board board, Player user, Player computer) {
         board.print();
-        Scanner sc = new Scanner(System.in); 
-        System.out.println(user.name+">");
-        String UStone = sc.nextLine();
-        System.out.println(computer.name+">");
-        String CStone = sc.nextLine();
+        Scanner sc = new Scanner(System.in);
         
-        System.out.println("UStone"+UStone);
-        System.out.println("CStone"+CStone);
+        while(true){
+            System.out.println(user.name+">");
+            String UStone = sc.nextLine();
+            board.checkPrint(UStone,user);
+            
+            System.out.println(computer.name+">");
+            String CStone = sc.nextLine();
+            board.checkPrint(CStone,computer);
+        }
         
     }
 

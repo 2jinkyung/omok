@@ -23,6 +23,29 @@ public class Board {
             }
         }
     }
+    
+    int[][] userSpell;
+    int[][] comSpell;
+    
+    public void checkPrint(String point,Player user) {
+    	String[] points = point.split(" ");
+    	
+    	int spell = (int)points[0].charAt(0);
+    	int number = Integer.parseInt(points[1]);
+    	
+    	map[number][spell-64] = user.stone;
+    	
+    	for(int row=0; row <= size;row++) {
+    		for (int col = 0; col <= size; col++) {
+    			if(map[col][row].equals("O")) {
+    				
+    			}
+    		}
+    	}
+    	
+    	print();
+    }
+    
     public void print() {
         for (int row = 0; row <= size; row++) {
             for (int col = 0; col <= size; col++) {
@@ -32,10 +55,7 @@ public class Board {
         }
     }
     
-    public void checkPrint(String point) {
-    	String[] points = point.split(" ");
-    	
-    	String spell = points[0];
-    	String number = points[1];
-    }
+
+    
+
 }
