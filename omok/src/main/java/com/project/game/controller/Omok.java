@@ -10,19 +10,22 @@ public class Omok {
         play(board, user, computer);
     }
     private static void play(Board board, Player user, Player computer) {
-        board.print();
-        Scanner sc = new Scanner(System.in);
         
-        while(true){
-            System.out.println(user.name+">");
-            String UStone = sc.nextLine();
-            board.checkPrint(UStone,user);
+        Scanner sc = new Scanner(System.in); 
+        Player turn = user;
+        Boolean State = true;
+        
+        while(State == true){
+        	board.print();
+        	
+            System.out.println(turn.getName()+">");
+            String Stone = sc.nextLine();
+            turn = (turn.getStone().equals("O")) ? computer : user;
+            State = board.gamePlay(Stone,turn);
             
-            System.out.println(computer.name+">");
-            String CStone = sc.nextLine();
-            board.checkPrint(CStone,computer);
         }
-        
+        board.print(); //최종 바둑판
+
     }
 
 }
